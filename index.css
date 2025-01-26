@@ -26,6 +26,10 @@ button{
     background: #1F0322;
     color: white;
 }
+.del-link{
+    background: transparent;
+    border: none;
+}
 ul{
     list-style: none;
     margin-top: 20px;

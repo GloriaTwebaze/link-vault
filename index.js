@@ -32,11 +32,23 @@ delBtn.addEventListener('dblclick', ()=>{
     myLinks = []
     render(myLinks)
 })
+
+
 function render(links){
     let linkList = ''
 for(let i = 0; i < links.length; i++){
-    linkList += `<li><a href = '${links[i]}' target= '_blank'>${links[i]}</a></li>`
+    linkList += `<li><a href = '${links[i]}' target= '_blank'>${links[i]}</a><button class = "del-link">🗑️</button></li>`
 }
 linkEl.innerHTML = linkList
+
+const deleteLinkBtn = document.querySelectorAll('.del-link')
+
+deleteLinkBtn.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index')); 
+        myLinks.splice(index, 1); 
+        localStorage.setItem('myLinks', JSON.stringify(myLinks)); 
+    });
+})
 
 }
