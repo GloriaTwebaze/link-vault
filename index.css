@@ -1,29 +1,28 @@
 body{
 margin: 10px;
 min-width: 400px;
-color: #1F0322;
 }
 input{
     width: 100%;
     padding: 10px;
-    border: 1px solid #1F0322;
+    border: 1px solid #59114d;
     margin-bottom: 6px;
     box-sizing: border-box;
 }
 button{
     padding: 8px 20px;
-    background: #1F0322;
-    border: 1px solid #1F0322;
+    background: #59114d;
+    border: 1px solid #59114d;
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 #del-btn{
     background: white;
-    color: #1F0322;
+    color: #59114d;
 }
 #del-btn:hover{
-    background: #1F0322;
+    background: #59114d;
     color: white;
 }
 .del-link{
@@ -39,5 +38,5 @@ li{
     margin-top: 5px;
 }
 a{
-    color: #1F0322;
+    color: #59114d;
 }

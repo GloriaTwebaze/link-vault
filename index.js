@@ -38,14 +38,23 @@ function render(links) {
         linkList += `
             <li>
                 <a href="${links[i]}" target="_blank">${links[i]}</a>
-                <button class="del-link" onclick="deleteLink(${i})">🗑️</button>
+                <button class="del-link">🗑️</button>
             </li>`;
     }
     linkEl.innerHTML = linkList;
+
+    const deleteLinkBtns = document.querySelectorAll('.del-link');
+    deleteLinkBtns.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            myLinks.splice(index, 1); 
+            localStorage.setItem('myLinks', JSON.stringify(myLinks)); 
+            render(myLinks); 
+        });
+    });
 }
 
-function deleteLink(index) {
-    myLinks.splice(index, 1); 
-    localStorage.setItem('myLinks', JSON.stringify(myLinks)); 
-    render(myLinks); 
-}
+// function deleteLink(index) {
+//     myLinks.splice(index, 1); 
+//     localStorage.setItem('myLinks', JSON.stringify(myLinks)); 
+//     render(myLinks); 
+// }
